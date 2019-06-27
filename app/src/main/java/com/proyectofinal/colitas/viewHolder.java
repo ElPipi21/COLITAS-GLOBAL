@@ -1,41 +1,48 @@
 package com.proyectofinal.colitas;
 
-import android.support.annotation.NonNull;
+
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 
-public class viewHolder extends RecyclerView.ViewHolder {
+public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    Button btn_megusta;
-    Button btn_estado;
+    Button btn1;
+    Button btn2;
     ImageView imagen;
-    TextView nombre;
+    TextView titulo;
+    List<Fuente> ListaObjeto;
 
-
-    public viewHolder(@NonNull View itemView) {
+    public viewHolder(View itemView, List<Fuente> datos) {
         super(itemView);
 
-        btn_megusta= itemView.findViewById(R.id.btn_megusta);
-        btn_estado= itemView.findViewById(R.id.btn_estado);
-        imagen= itemView.findViewById(R.id.img_mascota);
-        nombre =itemView.findViewById(R.id.txt_nombreMascota);
+        btn1= itemView.findViewById(R.id.btn1);
+        btn2= itemView.findViewById(R.id.btn2);
+        imagen= itemView.findViewById(R.id.imagen);
+        titulo=  itemView.findViewById(R.id.texto);
+        ListaObjeto= datos;
 
-        btn_megusta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btn1.setOnClickListener(this);
 
-            }
-        });
-        btn_estado.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btn2.setOnClickListener(this);
+    }
 
-            }
-        });
+    @Override
+    public void onClick(View v) {
+        int position= getAdapterPosition();
+        Fuente objeto = ListaObjeto.get(position);
 
+        if (v.getId()==btn1.getId()){
+            Toast.makeText(btn1.getContext(), "Apreto la opcion me gusta" + position + " de" + objeto.getTitulo(), Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(btn1.getContext(), "Apreto la opcion favorito", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }
