@@ -1,11 +1,13 @@
 package com.proyectofinal.colitas;
 
+import java.io.Serializable;
+
 //de aca voy a sacar los datos para la tarjetita que mostrará el animalito
 //quedaría pendiente jalar estos datos desde la base de datos
 //de la base tiene que salir  esto y acoplarse
 //de momento lo dejaré que vaya jalando de lo que tengo en local XD
 //
-public class Fuente {
+public class Fuente implements Serializable {
 
     String titulo;
     int imagen;

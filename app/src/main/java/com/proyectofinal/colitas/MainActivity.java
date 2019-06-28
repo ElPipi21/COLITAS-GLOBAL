@@ -1,10 +1,15 @@
 package com.proyectofinal.colitas;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -12,12 +17,11 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         ArrayList<Fuente> lista = new ArrayList<Fuente>();
         lista.add(new Fuente("Conejos", R.drawable.conejitos, 0));
@@ -40,6 +44,22 @@ public class MainActivity extends AppCompatActivity {
         layout.setOrientation(LinearLayoutManager.VERTICAL);
         contenedor.setAdapter(new Adaptador(lista));
         contenedor.setLayoutManager(layout);
+
+        /*
+        //parte llamada
+        ImageView imagenboton= findViewById(R.id.imagen);
+        imagenboton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(v.getContext(), Detalle.class);
+                startActivityForResult(intent, 0);
+            }
+        });
+        */
+
+
+
+
 
 
 

@@ -19,7 +19,6 @@ public class Adaptador extends RecyclerView.Adapter<viewHolder> {
     @Override
     public viewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View vista = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_item, viewGroup, false);
-
         return new viewHolder(vista, ListaObjeto);
     }
 

@@ -1,6 +1,7 @@
 package com.proyectofinal.colitas;
 
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,7 @@ public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickL
         ListaObjeto= datos;
 
         btn1.setOnClickListener(this);
-
+        imagen.setOnClickListener(this);
         btn2.setOnClickListener(this);
     }
 
@@ -38,11 +39,26 @@ public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickL
         int position= getAdapterPosition();
         Fuente objeto = ListaObjeto.get(position);
 
-        if (v.getId()==btn1.getId()){
-            Toast.makeText(btn1.getContext(), "Apreto la opcion me gusta" + position + " de" + objeto.getTitulo(), Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(btn1.getContext(), "Apreto la opcion favorito", Toast.LENGTH_SHORT).show();
 
+        if (v.getId()==imagen.getId()){
+            Toast.makeText(btn1.getContext(), "Apreto la imagen", Toast.LENGTH_SHORT).show();
+
+            Intent nuevo = new Intent(v.getContext(), Detalle.class);
+
+
+
+
+        }else{
+            if (v.getId()==btn1.getId()){
+                Toast.makeText(btn1.getContext(), "Apreto la opcion me gusta" + position + " de" + objeto.getTitulo(), Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(btn1.getContext(), "Apreto la opcion favorito", Toast.LENGTH_SHORT).show();
+
+            }
         }
     }
+
+
+
+
 }
