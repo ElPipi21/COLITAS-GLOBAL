@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-
+//toddo esto lo voy a borrar porque me esta desorganizando todo
 public class viewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     Button btn1;
