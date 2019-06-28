@@ -31,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
         lista.add(new Fuente("Gato", R.drawable.gatito3, 0));
         lista.add(new Fuente("Cuy", R.drawable.cuy, 0));
 
-
-
         RecyclerView contenedor = findViewById(R.id.contenedor);
         contenedor.setHasFixedSize(true);
         LinearLayoutManager layout = new LinearLayoutManager(getApplicationContext());
