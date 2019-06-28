@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         ArrayList<Fuente> lista = new ArrayList<Fuente>();
         lista.add(new Fuente("Conejos", R.drawable.conejitos, 0));
